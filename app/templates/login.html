@@ -2,7 +2,9 @@
 
 {% block content %}
 <div class="jumbotron">
-	<h1>Sign In</h1>
+	<div class="container">
+		<h1>Sign In</h1>
+	</div>
 </div>
 <div class="container">
 	{# Specifying not to validate the form, we will do that using WTForms (not necessary to include this)#}
@@ -17,14 +19,14 @@
 			{{ form.email(size = 32)}}<br>
 			{# To show error messages instead of just redisplaying the form #}
 			{% for error in form.email.errors %}
-				<span style="color: red;">[{{error}}]</span>
+			<span style="color: red;">[{{error}}]</span>
 			{% endfor %}			
 		</p>
 		<p>
 			{{ form.password.label }}<br>
 			{{ form.password(size = 32)}}<br>
 			{% for error in form.password.errors %}
-				<span style="color: red;">[{{error}}]</span>
+			<span style="color: red;">[{{error}}]</span>
 			{% endfor %}
 		</p>
 		<p>{{ form.remember_me() }} {{form.remember_me.label}}</p>
